@@ -89,6 +89,7 @@ class _myAppState extends State<myApp> {
         child: new Center(
           child: new Column(
             children: <Widget>[
+              new Padding(padding: const EdgeInsets.only(top: 10.0)),
               new TextField(
                 onChanged: (String value){onChanged1(value);},
                 controller: controller1,
