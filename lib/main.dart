@@ -99,7 +99,6 @@ class _myAppState extends State<myApp> {
               new TextField(
                 decoration: InputDecoration(labelText: "Second Number"),
                 keyboardType: TextInputType.numberWithOptions(),
-                style: TextStyle(fontWeight: FontWeight.bold),
                 onChanged: (String value){onChanged2(value);},
                 controller: controller2,
               ),
