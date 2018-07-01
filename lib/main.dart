@@ -91,10 +91,12 @@ class _myAppState extends State<myApp> {
             children: <Widget>[
               new Padding(padding: const EdgeInsets.only(top: 10.0)),
               new TextField(
+                keyboardType: TextInputType.numberWithOptions(),
                 onChanged: (String value){onChanged1(value);},
                 controller: controller1,
               ),
               new TextField(
+                keyboardType: TextInputType.numberWithOptions(),
                 onChanged: (String value){onChanged2(value);},
                 controller: controller2,
               ),
