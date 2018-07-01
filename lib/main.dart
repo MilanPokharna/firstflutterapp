@@ -12,17 +12,71 @@ class myApp extends StatefulWidget {
 
 class _myAppState extends State<myApp> {
   String _text = "";
-  TextEditingController controller=new TextEditingController();
+  String _text1 = "";
+  String _text2 = "";
+  TextEditingController controller1=new TextEditingController();
+  TextEditingController controller2 = new TextEditingController();
   void add()
   {
-
     setState(() {
-      _text = controller.text;
+      var myInt = int.parse(_text1);
+      assert(myInt is int);
+      var myInt2 = int.parse(_text2);
+      assert(myInt2 is int);
+      int a = myInt+myInt2;
+      _text = "" + a.toString();
     });
+
+  }
+  void sub()
+  {
+    setState(() {
+      var myInt = int.parse(_text1);
+      assert(myInt is int);
+      var myInt2 = int.parse(_text2);
+      assert(myInt2 is int);
+      int a = myInt-myInt2;
+      _text = "" + a.toString();
+    });
+
+  }
+  void mul()
+  {
+    setState(() {
+      var myInt = int.parse(_text1);
+      assert(myInt is int);
+      var myInt2 = int.parse(_text2);
+      assert(myInt2 is int);
+      int a = myInt*myInt2;
+      _text = "" + a.toString();
+    });
+
+  }
+  void div()
+  {
+    setState(() {
+      var myInt = int.parse(_text1);
+      assert(myInt is int);
+      var myInt2 = int.parse(_text2);
+      assert(myInt2 is int);
+      double a = myInt/myInt2;
+      _text = "" + a.toString();
+    });
+
   }
   void onChanged1(String value)
   {
-    
+    setState(() {
+      _text="";
+      _text1 = controller1.text;
+    });
+  }
+  void onChanged2(String value)
+  {
+    setState(() {
+      _text="";
+      _text2 = controller2.text;
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -36,17 +90,40 @@ class _myAppState extends State<myApp> {
           child: new Column(
             children: <Widget>[
               new TextField(
-                onChanged: (String value){onChanged(value);},
-                controller: controller,
+                onChanged: (String value){onChanged1(value);},
+                controller: controller1,
+              ),
+              new TextField(
+                onChanged: (String value){onChanged2(value);},
+                controller: controller2,
               ),
               new RaisedButton(
-                child: new Text("Add"),
-                  color: Colors.blue,
+                child: new Text("+",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
+                  color: Colors.green,
                   onPressed: (){
                   add();
                   }),
+              new RaisedButton(
+                  child: new Text("-",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
+                  color: Colors.yellow,
+                  onPressed: (){
+                    sub();
+                  }),
+              new RaisedButton(
+                  child: new Text("x",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
+                  color: Colors.orange,
+                  onPressed: (){
+                    mul();
+                  }),
+              new RaisedButton(
+                  child: new Text("/",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
+                  color: Colors.blue,
+                  onPressed: (){
+                    div();
+                  }),
               new Text(
-                "$_text"
+                "$_text",
+                style:TextStyle(color: Colors.red,fontSize: 50.0,fontWeight:FontWeight.bold) ,
               )
             ],
           ),
