@@ -89,7 +89,7 @@ class _myAppState extends State<myApp> {
         child: new Center(
           child: new Column(
             children: <Widget>[
-              new Padding(padding: const EdgeInsets.only(top: 10.0)),
+              new Padding(padding: const EdgeInsets.only(top: 30.0)),
               new TextField(
                 keyboardType: TextInputType.numberWithOptions(),
                 onChanged: (String value){onChanged1(value);},
@@ -100,30 +100,35 @@ class _myAppState extends State<myApp> {
                 onChanged: (String value){onChanged2(value);},
                 controller: controller2,
               ),
-              new RaisedButton(
-                child: new Text("+",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
-                  color: Colors.green,
-                  onPressed: (){
-                  add();
-                  }),
-              new RaisedButton(
-                  child: new Text("-",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
-                  color: Colors.yellow,
-                  onPressed: (){
-                    sub();
-                  }),
-              new RaisedButton(
-                  child: new Text("x",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
-                  color: Colors.orange,
-                  onPressed: (){
-                    mul();
-                  }),
-              new RaisedButton(
-                  child: new Text("/",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
-                  color: Colors.blue,
-                  onPressed: (){
-                    div();
-                  }),
+              new Row(
+                children: <Widget>[
+                  new Padding(padding: const EdgeInsets.only(top: 100.0)),
+                  new RaisedButton(
+                      child: new Text("+",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
+                      color: Colors.green,
+                      onPressed: (){
+                        add();
+                      }),
+                  new RaisedButton(
+                    child: new Text("-",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
+                    color: Colors.yellow,
+                    onPressed: (){
+                      sub();
+                    }),
+                  new RaisedButton(
+                    child: new Text("x",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
+                    color: Colors.orange,
+                    onPressed: (){
+                      mul();
+                    }),
+                  new RaisedButton(
+                      child: new Text("/",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
+                      color: Colors.blue,
+                      onPressed: (){
+                        div();
+                      }),
+              ]
+              ),
               new Text(
                 "$_text",
                 style:TextStyle(color: Colors.red,fontSize: 50.0,fontWeight:FontWeight.bold) ,
