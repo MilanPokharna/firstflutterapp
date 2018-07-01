@@ -106,6 +106,7 @@ class _myAppState extends State<myApp> {
               new Row(children: <Widget>[
                 new Padding(
                     padding: const EdgeInsets.only(top: 100.0, left: 10.0)),
+                SizedBox(width: 60.0),
                 new RaisedButton(
                     child: new Text(
                       "+",
@@ -116,6 +117,7 @@ class _myAppState extends State<myApp> {
                     onPressed: () {
                       add();
                     }),
+                SizedBox(width: 60.0),
                 new RaisedButton(
                     child: new Text(
                       "-",
@@ -126,27 +128,36 @@ class _myAppState extends State<myApp> {
                     onPressed: () {
                       sub();
                     }),
-                new RaisedButton(
-                    child: new Text(
-                      "x",
-                      style: TextStyle(
-                          fontSize: 28.0, fontWeight: FontWeight.bold),
-                    ),
-                    color: Colors.orange,
-                    onPressed: () {
-                      mul();
-                    }),
-                new RaisedButton(
-                    child: new Text(
-                      "/",
-                      style: TextStyle(
-                          fontSize: 28.0, fontWeight: FontWeight.bold),
-                    ),
-                    color: Colors.blue,
-                    onPressed: () {
-                      div();
-                    }),
-              ]),
+                ]
+              ),
+                new Row(
+                  children: <Widget>[
+                    new Padding(
+                        padding: const EdgeInsets.only( left: 10.0)),
+                    SizedBox(width: 60.0),
+                    new RaisedButton(
+                        child: new Text(
+                          "/",
+                          style: TextStyle(
+                              fontSize: 28.0, fontWeight: FontWeight.bold),
+                        ),
+                        color: Colors.blue,
+                        onPressed: () {
+                          div();
+                        }),
+                    SizedBox(width: 60.0),
+                    new RaisedButton(
+                        child: new Text(
+                          "x",
+                          style: TextStyle(
+                              fontSize: 28.0, fontWeight: FontWeight.bold),
+                        ),
+                        color: Colors.orange,
+                        onPressed: () {
+                          mul();
+                        }),
+                  ]),
+              SizedBox(height: 30.0),
               new Text(
                 "$_text",
                 style: TextStyle(
