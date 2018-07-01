@@ -104,7 +104,7 @@ class _myAppState extends State<myApp> {
               ),
               new Row(
                 children: <Widget>[
-                  new Padding(padding: const EdgeInsets.only(top: 100.0)),
+                  new Padding(padding: const EdgeInsets.only(top: 100.0,left: 10.0)),
                   new RaisedButton(
                       child: new Text("+",style: TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
                       color: Colors.green,
