@@ -1,6 +1,7 @@
 # firstflutterapp
 
 A new Flutter application.
+This is a basic Application performing addition,subtraction,multiplication and division of two integers.
 
 ## Getting Started
 
